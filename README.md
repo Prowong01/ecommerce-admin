@@ -70,23 +70,13 @@ FRONTEND_STORE_URL=http://localhost:3001
 STRIPE_WEBHOOK_SECRET=
 ```
 
-### Connect to PlanetScale and Push Prisma
-```shell
-npx prisma generate
-npx prisma db push
-```
+### Credit to Code With Antonio 
+https://www.codewithantonio.com/
 
 
-### Start the app
+## Acknowledgements
 
-```shell
-npm run dev
-```
+I would like to express my gratitude to Code With Antonio for his invaluable tutorials. Their clear explanations and insightful examples greatly contributed to my understanding of this project, 
 
-## Available commands
-
-Running commands with npm `npm run [command]`
-
-| command         | description                              |
-| :-------------- | :--------------------------------------- |
-| `dev`           | Starts a development instance of the app |
+- **[Code with Antonio]**:
+https://www.youtube.com/watch?v=5miHyP6lExg
