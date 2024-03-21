@@ -58,17 +58,20 @@ export async function POST(
 
 export async function GET(
   req: Request,
-  { params }: { params: { storeId: string } }
+  { params }: { params: { storeId: string, categoryId: string } }
 ) {
   try {
     if (!params.storeId) {
       return new NextResponse("Store id is required", { status: 400 });
     }
 
-    const categories = await prismadb.category.findMany({
+    const categories = await prismadb.category.findUnique({
       where: {
-        storeId: params.storeId
-      }
+        id: params.categoryId
+      },
+      include: {
+        billboard:true
+      },
     });
   
     return NextResponse.json(categories);
@@ -77,3 +80,4 @@ export async function GET(
     return new NextResponse("Internal error", { status: 500 });
   }
 };
+
