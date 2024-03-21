@@ -70,9 +70,10 @@ export async function GET(
         storeId: params.storeId
       }
     });
-
+  
     return NextResponse.json(categories);
-	@@ -77,3 +80,4 @@ export async function GET(
+  } catch (error) {
+    console.log('[CATEGORIES_GET]', error);
     return new NextResponse("Internal error", { status: 500 });
   }
 };
