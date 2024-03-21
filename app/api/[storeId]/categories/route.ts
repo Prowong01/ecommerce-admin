@@ -69,3 +69,10 @@ export async function GET(
       where: {
         storeId: params.storeId
       }
+    });
+
+    return NextResponse.json(categories);
+	@@ -77,3 +80,4 @@ export async function GET(
+    return new NextResponse("Internal error", { status: 500 });
+  }
+};
